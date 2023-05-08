@@ -21,3 +21,7 @@ creator-shreyash Dnyaneshwar vaidya
 INSTALLATION IN TERMUX 
 chmod +X install
 ./install
+
+
+
+then simply use command Taskmanager
