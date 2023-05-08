@@ -1,0 +1,35 @@
+install
+#!/bin/bash
+
+# Check if Termux is installed
+if [ ! -d "$HOME/.termux" ]; then
+    echo "Error: Termux is not installed."
+    exit 1
+fi
+
+# Check if Git is installed
+if ! command -v git >/dev/null; then
+    echo "Installing Git..."
+    pkg install git -y
+fi
+
+# Check if Bash is installed
+if ! command -v bash >/dev/null; then
+    echo "Installing Bash..."
+    pkg install bash -y
+fi
+
+# Clone the repository
+echo "Cloning the repository..."
+git clone https://github.com/YOUNGWOLF47/Task-manager
+
+# Navigate to the repository directory
+cd Task-manager
+
+# Make the script executable
+chmod +x Taskmanager.sh
+
+# Create a symlink to the script in the /data/data/com.termux/files/usr/bin>
+ln -sf $PWD/Taskmanager.sh /data/data/com.termux/files/usr/bin/Taskmanager
+
+echo "Installation complete. You can now run the Task Manager by typing 'Ta>
